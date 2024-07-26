@@ -1,0 +1,199 @@
+/* global rules */
+:root{
+    --first-color: #fd1313;
+    --second-color: #62fd13;
+    --third-color: #13b0fd;
+
+    --section-padding: 10px;
+}
+*{
+    margin: 0;
+    /* padding: 0; */
+}
+::selection {
+    color: var(--third-color);
+    background-color: #fff;
+}
+/* CSSing */
+body{
+    /* background-color: var(--third-color); */
+    background-color: #000;
+}
+header{
+    position: relative; 
+    /* background-color: var(--first-color); */
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../images/test/city.jpg");
+    background-size: cover;
+}
+header::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: .8;
+}
+header section.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+header section.container section.contents{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #00000050;
+    background-image: url("../images/from temp/owl-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 35px 0px;
+    max-height: fit-content;
+    width: 95vw;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    text-align: center;
+
+    box-shadow: #fd1313 0px 0px 15px;
+    animation-name: RGB;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+@keyframes RGB {
+    33% {
+    box-shadow: #fd1313 0px 0px 15px;
+    }
+    66% {
+    box-shadow: #62fd13 0px 0px 15px;
+    }
+    100% {
+    box-shadow: #13b0fd 0px 0px 15px;
+    }
+    
+  }
+header section.container section.contents::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: .65;
+    top: 0;
+    z-index: -1;
+    border-radius: 20px;
+}
+header section.container section.contents img.iconic{
+    width: 250px;
+    /* transition: 30s;
+    transition-timing-function: linear; */
+    
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate {
+    to {
+      transform: translateY(-20px);
+      transform: rotate(360deg);
+    }
+  }
+header section.container section.contents img.iconic:hover{
+    /* rotate: 360deg; */
+}
+header section.container section.contents h2{
+    /* position: absolute; */
+    color: #fff;
+    font-size: 50px;
+}
+header section.container section.contents h2::before{
+    position: absolute;
+    content: "";
+    background-color: var(--second-color);
+    height: 5px;
+    width: 200px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+header section.container section.contents p{
+    /* color: var(--third-color); */
+    color: #fff;
+    font-size: 25px;
+    padding-top: 30px;
+}
+header section.container section.contents p.author-tag{
+    font-size: 19px;
+    color: #fff;
+    
+}
+header section.container section.contents p a{
+    color: var(--third-color);
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 0 5px;
+}
+
+@media (max-width: 992px){
+    /* header section.container {
+        padding: 10px;
+    } */
+    header section.container section.contents{
+        text-align: center;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* bottom: -50%;
+        transform: translateX(50%); */
+        left: 50%;
+        transform: translateX(-50%);
+        /* transform: translateY(-50%); */
+        background-color: #ff000085;
+        padding: 20px;
+        /* padding: 20px; */
+        width: 80%;
+    }
+    header section.container section.contents img{
+        width: 200px;
+    }
+    header section.container section.contents h2{
+        color: #fff;
+        font-size: 40px;
+    }
+    header section.container section.contents p{
+        font-size: 25px;
+    }   
+    }
+
+@media (max-height:725px){
+header section.container section.contents{
+    height: fit-content;
+}
+header section.container section.contents img.iconic{
+    /* display: none; */
+    width: 200px;
+    height: 200px;
+}
+header section.container section.contents h2{
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+}
+header section.container section.contents p{
+    /* color: #ff0; */
+    padding-top: 10px;
+    font-size: 20px;
+}
+}
